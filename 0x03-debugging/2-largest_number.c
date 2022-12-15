@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * Largest_number - returns the largest number
+ * largest_number - returns the largest number
  * @a: first integer
  * @b: second integer
  * @c: third integer
