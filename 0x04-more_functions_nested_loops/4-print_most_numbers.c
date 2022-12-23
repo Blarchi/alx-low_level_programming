@@ -17,8 +17,5 @@ void print_most_numbers(void)
 		if (!(number == 2) || (number == 4))
 			_putchar(number);
 	}
-	/**printf(“retrans\n”)
-        *printfflush/_putchar
-	*/
 	_putchar('\n');
 }
