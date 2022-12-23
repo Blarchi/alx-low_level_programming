@@ -4,14 +4,13 @@
  *
  * Return: nothing
  */
-
 void print_most_numbers(void)
 {
 	int number;
 
-	for (number = 60; number < 70; number++)
+	for (number = 0; number <= 10; number++)
 	{
-		if (!(number == 62) || (number == 64))
+		if (!(number == 2) || (number == 4))
 			_putchar(number);
 	}
 	_putchar(10);
