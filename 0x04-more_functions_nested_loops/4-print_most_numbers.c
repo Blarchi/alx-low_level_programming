@@ -12,11 +12,8 @@ void print_most_numbers(void)
 
 	for (number = 60; number < 70; number++)
 	{
-		if ((number == 62) || (number == 64))
-		{
-			continue;
-		}
-		_putchar(number);
+		if (!(number == 62) || (number == 64))
+			_putchar(number);
 	}
 	_putchar(10);
 }
