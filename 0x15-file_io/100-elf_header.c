@@ -304,6 +304,6 @@ print_type(header->e_type, header->e_ident);
 print_entry(header->e_entry, header->e_ident);
 
 free(header);
-iclose_elf(0);
+close_elf(o);
 return (0);
 }
