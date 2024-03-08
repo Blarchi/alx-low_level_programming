@@ -28,5 +28,5 @@ int main(void)
             }
     }
     putchar('\n');
-    retrn (0);
+    return (0);
 }
