@@ -17,7 +17,7 @@ int main(void)
 	{
 		for (n = a + 1; n <= 99; n++)
 		{
-			putchar ((a/ 10) + '0');
+			putchar ((a / 10) + '0');
 			putchar ((a % 10) + '0');
 			putchar (' ');
 			putchar ((n / 10) + '0');
