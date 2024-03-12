@@ -1,71 +1,30 @@
 #include "3-calc.h"
+#include <string.h>
 
 /**
- * op_add - adds two numbers.
- * @a: first number.
- * @b: second number.
+ * get_op_func - selects the correct operation toperform
+ * @s: operation to perform
  *
- * Return: add.
+ * Return: pointer to the correct function
  */
-int op_add(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
-	return (a + b);
-}
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i;
 
-/**
- * op_sub - subctracts two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: difference.
- */
-int op_sub(int a, int b)
-{
-	return (a - b);
-}
-
-/**
- * op_mul - multiplies two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: multiplication.
- */
-int op_mul(int a, int b)
-{
-	return (a * b);
-}
-
-/**
- * op_div - divides two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: division.
- */
-int op_div(int a, int b)
-{
-	if (b == 0)
+	i = 0;
+	while (ops[i].op != NULL)
 	{
-		printf("Error\n");
-		exit(100);
+		if (strcmp(s, ops[i].op) == 0)
+			break;
+		i++;
 	}
-	return (a / b);
-}
-
-/**
- * op_mod - calculates the module of two numbers.
- * @a: first number.
- * @b: second number.
- *
- * Return: remainder of the division.
- */
-int op_mod(int a, int b)
-{
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	return (a % b);
+	return (ops[i].f);
 }
